@@ -18,7 +18,7 @@ body {
 }
 
 .fa-compass {
-    color: #fe424d;
+    color: #9279ba;
     font-size: 2rem;
 }
 
@@ -97,12 +97,12 @@ body {
 }
 
 .add-btn {
-    background-color: #fe424d !important;
+    background-color: #9279ba !important;
     border: none !important;
 }
 
 .edit-btn {
-    background-color: #fe424d !important;
+    background-color: #9279ba !important;
     border: none !important;
 }
 
