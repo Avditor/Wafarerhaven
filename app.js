@@ -22,8 +22,9 @@ const listingRouter = require("./expressroutes/listing.js");
 const reviewRouter = require("./expressroutes/review.js");
 const userRouter = require("./expressroutes/user.js");
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wf";
 const dbUrl = process.env.ATLASDB_URL;
+
+
 
 main()
   .then(() => {
