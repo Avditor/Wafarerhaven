@@ -1,11 +1,66 @@
 <%- layout('/layouts/boilerplate') %> <%= success %>
-  <body>
-    <h3>All Listings</h3>
-    <!-- <form method="GET" action="/listings/new">
-      <button>Create New Listing</button>
-    </form> -->
+  
+<style>
+  #filters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .filter{
+    text-align: center;
+    margin-right: 6.5rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+  }
+
+  .filter:hover{
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .filter p {
+    font-size: 0.8rem;
+  }
+</style>
+    <div id="filters">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire-flame-curved"></i></div>
+         <p>Trending</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-mountain-city"></i></i></div>
+         <p>Homestays</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-city"></i></div>
+         <p>Iconic Cities</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-people-group"></i></div>
+         <p>Nearby Travellers</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-tents"></i></div>
+         <p>Upcoming Trips</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-calendar"></i></div>
+         <p>Events</p>
+      </div>
+
+      <div class="filter">
+        <div><i class="fa-solid fa-umbrella-beach"></i></div>
+         <p>Create an event</p>
+      </div>
+
+    </div>
     
-    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1">
+    <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
         <% for(let listing of allListings) { %>
           <a href="/listings/<%= listing._id%>" class="listing-link">
         <div class="card col listing-card">
@@ -23,6 +78,5 @@
       <% } %>
   
     </div>
-  </body>
   
 
