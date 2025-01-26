@@ -16,15 +16,11 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-
-
 const listingRouter = require("./expressroutes/listing.js");
 const reviewRouter = require("./expressroutes/review.js");
 const userRouter = require("./expressroutes/user.js");
 
 const dbUrl = process.env.ATLASDB_URL;
-
-
 
 main()
   .then(() => {
@@ -100,7 +96,6 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   let {statusCode = 500, message = "Something Went Wrong!"} = err;
   res.status(statusCode).render("errors.ejs", {message});
-  // res.status(statusCode).send(message);
 });
 
 app.listen(8080, () => {
