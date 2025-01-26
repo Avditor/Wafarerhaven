@@ -4,11 +4,12 @@
   #filters {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
   }
 
   .filter{
     text-align: center;
-    margin-right: 6.5rem;
+    margin-right: 4rem;
     margin-top: 2rem;
     opacity: 0.7;
   }
@@ -20,6 +21,20 @@
 
   .filter p {
     font-size: 0.8rem;
+  }
+
+  .tax-info{
+    display: none;
+  }
+
+  .tax-toggle {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 3rem;
+    display: flex;
+    align-items: center;
   }
 </style>
     <div id="filters">
@@ -58,6 +73,12 @@
          <p>Create an event</p>
       </div>
 
+      <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Display Total After Taxes</label>
+        </div>
+      </div>
     </div>
     
     <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
@@ -71,6 +92,7 @@
             <p class="card-text">
               <b><%= listing.title %></b> <br/>
               &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
+              <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
             </p>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
@@ -79,4 +101,16 @@
   
     </div>
   
+  <script>
+    let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+    taxSwitch.addEventListener("click", () => {
+      let taxInfo = document.getElementsByClassName("tax-info");
+      for(info of taxInfo){
+        if(info.style.display != "inline"){
+          info.style.display = "inline";
+        }
+        else info.style.display = "none";
+      }
+    });
+  </script>
 
